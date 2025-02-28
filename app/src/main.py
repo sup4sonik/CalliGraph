@@ -3,7 +3,10 @@ import sys
 import ast 
 from node_visitor import NodeVisitor
 from node_visit_interface import NodeVisitInterface
+from colorama import Fore, Style, init
 
+# Initialize colorama for Windows compatibility
+init(autoreset=True)
 
 class CalliGraph(NodeVisitInterface): 
 
@@ -42,10 +45,12 @@ class CalliGraph(NodeVisitInterface):
         self.pretty_print()
 
     def pretty_print(self): 
-        print(self.callmap)
-        # for func, calls in call_graph.items():
-        #     print(f"{func} -> {', '.join(calls) if calls else 'No calls'}")
-
+        for func, calls in self.callmap.items():
+            print(Fore.GREEN + Style.BRIGHT + f"\n{func}:")
+            for call in calls:
+                print(Fore.LIGHTBLACK_EX + f"  ->  " + Fore.RESET + f"{call}")
+            if not calls:
+                print("    No calls")
 
 
 def readfile(filename): 

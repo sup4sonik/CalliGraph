@@ -3,7 +3,9 @@
 def foo():
     bar()
     baz()
-    hello.world()
+
+def noCalls(): 
+    return 
 
 def bar():
     pass
@@ -14,10 +16,15 @@ def baz():
 def qux():
     pass
 
-def complex(): 
-    MyClass.method()
+def examples(): 
     method()
+    example()
+    hello.world()
+    Hello()
+
+
+def complex(): 
+    MyClass().method()
     myclass.method.two()
     this.example()
     another.example()
-    example()
