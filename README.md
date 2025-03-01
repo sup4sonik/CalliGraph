@@ -22,8 +22,29 @@ python3 app/src/main.py example.py
 
 Currently, the app produces the following type of output (text):
 
-![Screenshot from 2025-03-01 00-29-34](https://github.com/user-attachments/assets/bd56b6ca-eb7d-4569-97dc-bbacc5b49963)
+```
+foo:
+  ->  bar()
+  ->  baz()
 
+baz:
+  ->  qux()
+
+examples:
+  ->  method()
+  ->  example()
+  ->  hello.world()
+  ->  Hello()
+
+complex:
+  ->  MyClass().method()
+  ->  MyClass()
+  ->  ***.two()
+  ->  this.example()
+  ->  another.example()
+```
+
+> *** donates a complex attribute call with multiple classes and/or objects, and could therefore not determine the full path (at the current state of the app)
 
 ## Roadmap
 ### Definitely 
